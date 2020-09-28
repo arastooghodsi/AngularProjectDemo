@@ -9,7 +9,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class VideoPracticeComponent implements OnInit {
 
   genders: string[] = ['آقا', 'خانم'];
+  jobs: string[] = ['کارمند', 'آزاد', 'خانه دار', 'بیکار'];
   defaultGender = 'آقا';
+  defaultJob = 'کارمند'
   inputForm: FormGroup;
 
   constructor() { }
@@ -18,7 +20,8 @@ export class VideoPracticeComponent implements OnInit {
     this.inputForm = new FormGroup({
       username: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      gender: new FormControl('آقا')
+      gender: new FormControl(this.defaultGender),
+      job: new FormControl(this.defaultJob)
     });
   }
 

@@ -13,13 +13,21 @@
     </div>
 
     <!--RadioButton Start-->
-    <p>جنسیت</p>
+    <p>جنسیت: </p>
     <div class="radio" *ngFor="let gender of genders">
       <label>
         <input formControlName="gender" type="radio" name="gender" ngModel [value]="gender">
         {{ gender }}
       </label>
-    </div> <!--RadioButton End-->
+    </div> <!--Gender RadioButton End-->
+
+    <p>شغل: </p>
+    <div class="radio" *ngFor="let job of jobs">
+      <label>
+        <input formControlName="job" type="radio" name="job" ngModel [value]="job">
+        {{ job }}
+      </label>
+    </div> <!--Job RadioButton End-->
 
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>
