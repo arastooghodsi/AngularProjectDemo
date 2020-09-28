@@ -1,0 +1,29 @@
+<!--Reactive Form-->
+<div class="reactiveForm">
+  <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="username">نام کاربری: </label>
+      <input formControlName="username" type="text" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+      <label for="email">ایمیل: </label>
+      <input formControlName="email" type="text" class="form-control" id="email">
+    </div>
+
+    <!--RadioButton Start-->
+    <p>جنسیت</p>
+    <div class="radio" *ngFor="let gender of genders">
+      <label>
+        <input formControlName="gender" type="radio" name="gender" ngModel [value]="gender">
+        {{ gender }}
+      </label>
+    </div> <!--RadioButton End-->
+
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+  </form>
+</div>
