@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VideoPracticeComponent } from './video-practice/video-practice.component';
 import { ProjExampleComponent } from './proj-example/proj-example.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     VideoPracticeComponent,
     ProjExampleComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DropdownModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

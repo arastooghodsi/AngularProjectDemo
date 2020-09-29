@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-video-practice',
@@ -8,13 +9,40 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class VideoPracticeComponent implements OnInit {
 
+  // users: any[] = [
+  //   'usename' = '',
+  //   'email' = '',
+  //   'country' = '',
+  //   'sex' = '',
+  //   'job' = ''
+  // ];
   genders: string[] = ['آقا', 'خانم'];
   jobs: string[] = ['کارمند', 'آزاد', 'خانه دار', 'بیکار'];
   defaultGender = 'آقا';
-  defaultJob = 'کارمند'
+  defaultJob = 'کارمند';
   inputForm: FormGroup;
 
-  constructor() { }
+  dropboxInputItem: string;
+
+  selectedCountry: string = 'ایران';
+  countries: any[];
+  items: SelectItem[];
+  item: string;
+
+  constructor() {
+    this.countries = [
+      {name: 'استرالیا', code: 'AU'},
+      {name: 'برزیل', code: 'BR'},
+      {name: 'چین', code: 'CN'},
+      {name: 'مصر', code: 'EG'},
+      {name: 'فرانسه', code: 'FR'},
+      {name: 'آلمان', code: 'DE'},
+      {name: 'هند', code: 'IN'},
+      {name: 'ژاپن', code: 'JP'},
+      {name: 'اسپانیا', code: 'ES'},
+      {name: 'ایلات متحده', code: 'US'}
+    ];
+  }
 
   ngOnInit(): void {
     this.inputForm = new FormGroup({
@@ -25,9 +53,17 @@ export class VideoPracticeComponent implements OnInit {
     });
   }
 
+  onchange(event: Event) {
+    // this.dropboxInputItem = this.selectedCountry.toString();
+    // alert(this.dropboxInputItem);
+    this.selectedCountry = (event.target as HTMLInputElement).innerText;
+    alert(this.selectedCountry);
+  }
+
   // tslint:disable-next-line:typedef
   onSubmit() {
     console.log(this.inputForm);
+    // alert(this.);
   }
   //
   // onClick() {
