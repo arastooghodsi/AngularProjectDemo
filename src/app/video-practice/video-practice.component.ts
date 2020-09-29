@@ -45,25 +45,30 @@ export class VideoPracticeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //noinspection TypeScriptValidateTypes
     this.inputForm = new FormGroup({
-      username: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      gender: new FormControl(this.defaultGender),
-      job: new FormControl(this.defaultJob)
+      'info': new FormControl({
+        'username': new FormControl(null, [Validators.required]),
+        'email': new FormControl(null, [Validators.required, Validators.email])
+      }),
+      'gender': new FormControl(this.defaultGender),
+      'job': new FormControl(this.defaultJob)
     });
   }
 
-  onchange(event: Event) {
-    // this.dropboxInputItem = this.selectedCountry.toString();
-    // alert(this.dropboxInputItem);
-    this.selectedCountry = (event.target as HTMLInputElement).innerText;
-    alert(this.selectedCountry);
-  }
+  // onchange(event: Event) {
+  //   // this.dropboxInputItem = this.selectedCountry.toString();
+  //   // alert(this.dropboxInputItem);
+  //   this.selectedCountry = (event.target as HTMLInputElement).value;
+  //   // alert((event.target as HTMLInputElement).value);
+  //   // alert((<HTMLInputElement>event.target).value);
+  //   alert(this.selectedCountry);
+  // }
 
   // tslint:disable-next-line:typedef
   onSubmit() {
     console.log(this.inputForm);
-    // alert(this.);
+    alert(this.inputForm.value.job  );
   }
   //
   // onClick() {

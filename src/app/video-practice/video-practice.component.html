@@ -2,17 +2,25 @@
 <div class="reactiveForm">
   <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
-      <label for="username">نام کاربری: </label>
-      <input formControlName="username" type="text" class="form-control" id="username">
-    </div>
+    <!--<div formGroupName="info">-->
+      <div class="form-group">
+        <label for="username">نام کاربری: </label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+        <span class="alert alert-danger"
+              *ngIf="!inputForm.get('info.username').valid && inputForm.get('info.username').touched">
+          Please enter a valid username
+        </span>
+      </div>
 
-    <div class="form-group">
-      <label for="email">ایمیل: </label>
-      <input formControlName="email" type="text" class="form-control" id="email">
-    </div>
-
-
+      <div class="form-group">
+        <label for="email">ایمیل: </label>
+        <input formControlName="email" type="text" class="form-control" id="email">
+        <span class="alert alert-danger"
+              *ngIf="!inputForm.get('info.email').valid && inputForm.get('info.email').touched">
+          Please enter a valid email
+        </span>
+      </div>
+    <!--</div>-->
 
     <!--RadioButton Start-->
     <p>جنسیت: </p>
@@ -31,6 +39,10 @@
       </label>
     </div> <!--Job RadioButton End-->
 
+    <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched">
+      please enter valid data
+    </span>
+
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
@@ -38,28 +50,28 @@
   </form>
 </div>
 
-<div class="dropboxClass">
-  <h1>دراپ باکس با جستجو</h1>
-  <p-dropdown [options]="countries"
-              name="selectedCountry"
-              [(ngModel)]="selectedCountry"
-              optionLabel="name"
-              value = "selectedCountry"
-              [filter]="true"
-              [showClear]="true"
-              placeholder="کشوری را انتخاب کنید..."
-              (select)="onchange($event)">
-    <ng-template pTemplate="selectedItem">
-      <div class="country-item country-item-value"  *ngIf="selectedCountry">
-        <!--      <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-'-->
-        <!--        + selectedCountry.code.toLowerCase()" />-->
-        <div style="text-align: center">{{selectedCountry.name}}</div>
-      </div>
-    </ng-template>
-    <ng-template let-country pTemplate="item">
-      <div class="country-item">
-        <div>{{country.value.name}}</div>
-      </div>
-    </ng-template>
-  </p-dropdown>
-</div>
+<!--<div class="dropboxClass">-->
+  <!--<h1>دراپ باکس با جستجو</h1>-->
+  <!--<p-dropdown [options]="countries"-->
+              <!--name="selectedCountry"-->
+              <!--[(ngModel)]="selectedCountry"-->
+              <!--optionLabel="name"-->
+              <!--value = "selectedCountry"-->
+              <!--[filter]="true"-->
+              <!--[showClear]="true"-->
+              <!--placeholder="کشوری را انتخاب کنید..."-->
+              <!--(onChange)="onchange($event)">-->
+    <!--<ng-template pTemplate="selectedItem">-->
+      <!--<div class="country-item country-item-value"  *ngIf="selectedCountry">-->
+        <!--&lt;!&ndash;      <img src="assets/showcase/images/demo/flag/flag_placeholder.png" [class]="'flag flag-'&ndash;&gt;-->
+        <!--&lt;!&ndash;        + selectedCountry.code.toLowerCase()" />&ndash;&gt;-->
+        <!--<div style="text-align: center">{{selectedCountry.name}}</div>-->
+      <!--</div>-->
+    <!--</ng-template>-->
+    <!--<ng-template let-country pTemplate="item">-->
+      <!--<div class="country-item">-->
+        <!--<div>{{country.value.name}}</div>-->
+      <!--</div>-->
+    <!--</ng-template>-->
+  <!--</p-dropdown>-->
+<!--</div>-->

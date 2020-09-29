@@ -4,9 +4,9 @@ import { ProjExampleComponent } from './proj-example/proj-example.component';
 import {VideoPracticeComponent} from './video-practice/video-practice.component';
 
 
-const routes: Routes = [
-  { path: 'example', component: ProjExampleComponent },
-  { path: 'video', component: VideoPracticeComponent }
+const routes: Routes = <Routes>[
+  {path: 'example', component: ProjExampleComponent},
+  {path: 'video', component: VideoPracticeComponent}
 ];
 
 @NgModule({
