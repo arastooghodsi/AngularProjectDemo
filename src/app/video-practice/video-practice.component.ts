@@ -57,7 +57,7 @@ export class VideoPracticeComponent implements OnInit {
   onchange(event: Event) {
     // this.dropboxInputItem = this.selectedCountry.toString();
     // alert(this.dropboxInputItem);
-    this.dropboxInputItem = (event.target as HTMLSelectElement).name.valueOf();
+    this.dropboxInputItem = (event.target as HTMLSelectElement).name;
     // alert((event.target as HTMLInputElement).value);
     // alert((<HTMLInputElement>event.target).value);
     alert(this.dropboxInputItem);

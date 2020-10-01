@@ -1,82 +1,90 @@
 <!--Reactive Form-->
-<div class="reactiveForm">
-  <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
 
-<!--    <div formGroupName="info">-->
-      <div class="form-group">
-        <label for="username">نام کاربری: </label>
-        <input formControlName="username" type="text" class="form-control" id="username">
-        <span class="alert alert-danger"
-              *ngIf="!inputForm.get('username').valid && inputForm.get('username').touched">
+
+<div style="width: 50%" class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <div class="reactiveForm">
+      <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+
+        <!--    <div formGroupName="info">-->
+        <div class="form-group">
+          <label for="username">نام کاربری: </label>
+          <input formControlName="username" type="text" class="form-control" id="username">
+          <span class="alert alert-danger"
+                *ngIf="!inputForm.get('username').valid && inputForm.get('username').touched">
           Please enter a valid username
         </span>
-      </div>
+        </div>
 
-      <div class="form-group">
-        <label for="email">ایمیل: </label>
-        <input formControlName="email" type="text" class="form-control" id="email">
-        <span class="alert alert-danger"
-              *ngIf="!inputForm.get('email').valid && inputForm.get('email').touched">
+        <div class="form-group">
+          <label for="email">ایمیل: </label>
+          <input formControlName="email" type="text" class="form-control" id="email">
+          <span class="alert alert-danger"
+                *ngIf="!inputForm.get('email').valid && inputForm.get('email').touched">
           Please enter a valid email
         </span>
-      </div>
-<!--    </div>-->
+        </div>
+        <!--    </div>-->
 
-    <!--RadioButton Start-->
-    <h1>جنسیت: </h1>
-    <div class="radio" *ngFor="let gender of genders">
-      <label>
-        <input formControlName="gender" type="radio" name="gender" ngModel [value]="gender">
-        {{ gender }}
-      </label>
-    </div> <!--Gender RadioButton End-->
+        <!--RadioButton Start-->
+        <h1>جنسیت: </h1>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input formControlName="gender" type="radio" name="gender" ngModel [value]="gender">
+            {{ gender }}
+          </label>
+        </div> <!--Gender RadioButton End-->
 
-    <h1>شغل: </h1>
-    <div class="radio" *ngFor="let job of jobs">
-      <label>
-        <input formControlName="job" type="radio" name="job" ngModel [value]="job">
-        {{ job }}
-      </label>
-    </div> <!--Job RadioButton End-->
+        <h1>شغل: </h1>
+        <div class="radio" *ngFor="let job of jobs">
+          <label>
+            <input formControlName="job" type="radio" name="job" ngModel [value]="job">
+            {{ job }}
+          </label>
+        </div> <!--Job RadioButton End-->
 
-<!--    <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched">-->
-<!--      please enter valid data-->
-<!--    </span>-->
+        <!--    <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched">-->
+        <!--      please enter valid data-->
+        <!--    </span>-->
 
-    <div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </form>
     </div>
 
-  </form>
-</div>
+    <div class="dropboxClass">
+      <h1>دراپ باکس با جستجو</h1>
+      <p-dropdown [options]="countries"
+                  name="selectedCountry"
+                  [(ngModel)]="selectedCountry"
+                  optionLabel="name"
+                  value = "selectedCountry"
+                  [filter]="true"
+                  [showClear]="true"
+                  placeholder="کشوری را انتخاب کنید..."
+                  (onChange)="onchange($event)">
+        <ng-template pTemplate="selectedItem">
+          <div class="country-item country-item-value"  *ngIf="selectedCountry">
+            <div style="text-align: center; width: 200px">{{selectedCountry.name}}</div>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="country-item">
+            <div>{{country.value.name}}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <br><br><br>
+    <p>Arastoo</p>
 
-<div class="dropboxClass">
-  <h1>دراپ باکس با جستجو</h1>
-  <p-dropdown [options]="countries"
-              name="selectedCountry"
-              [(ngModel)]="selectedCountry"
-              optionLabel="name"
-              value = "selectedCountry"
-              [filter]="true"
-              [showClear]="true"
-              placeholder="کشوری را انتخاب کنید..."
-              (onChange)="onchange($event)">
-    <ng-template pTemplate="selectedItem">
-      <div class="country-item country-item-value"  *ngIf="selectedCountry">
-        <div style="text-align: center; width: 200px">{{selectedCountry.name}}</div>
-      </div>
-    </ng-template>
-    <ng-template let-country pTemplate="item">
-      <div class="country-item">
-        <div>{{country.value.name}}</div>
-      </div>
-    </ng-template>
-  </p-dropdown>
-</div>
-<br><br><br>
-<p>Arastoo</p>
+    <div *ngFor="let user of users">
+      {{ user }}
+    </div>
+    <h1>Fatemeh</h1>
 
-<div *ngFor="let user of users">
-  {{ user }}
+  </div>
 </div>
-<h1>Fatemeh</h1>
