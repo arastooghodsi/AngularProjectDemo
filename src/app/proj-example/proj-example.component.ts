@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjExampleComponent implements OnInit {
 
+  users: string[] = ['arastoo', 'fatemeh', 'parastoo'];
+
   constructor() { }
 
   ngOnInit(): void {
