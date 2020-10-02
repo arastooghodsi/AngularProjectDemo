@@ -1,3 +1,14 @@
-<!--<div *ngFor="let user of users">-->
-<!--  {{ user }}-->
-<!--</div>-->
+<!--<select name="cars" id="cars" (change)="onChange($event)">-->
+<!--  &lt;!&ndash;    <div *ngFor="let user of users">&ndash;&gt;-->
+<!--  &lt;!&ndash;      <option ngModel name="username" value="{{user.id}}">{{user.name}}</option>&ndash;&gt;-->
+
+<!--  <option ngModel name="saab" value="saab">{{users.name}}</option>-->
+<!--&lt;!&ndash;  <option ngModel name="mercedes" value="mercedes">{{users[1].name}}</option>&ndash;&gt;-->
+<!--&lt;!&ndash;  <option ngModel name="audi" value="audi">{{users[2].name}}</option>&ndash;&gt;-->
+<!--  &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--</select>-->
+
+  <label class="sbw_light">Title:</label><br />
+  <select placeholder="کشوری را انتخاب کنید..." (change)="onChange($event)">
+    <option *ngFor="let user of users" [value]="user.name">{{user.name}}</option>
+  </select>

@@ -58,24 +58,22 @@
     <div class="dropboxClass">
       <h1>دراپ باکس با جستجو</h1>
       <p-dropdown [options]="countries"
-                  name="selectedCountry"
                   [(ngModel)]="selectedCountry"
                   optionLabel="name"
-                  value = "selectedCountry"
                   [filter]="true"
                   [showClear]="true"
                   placeholder="کشوری را انتخاب کنید..."
                   (onChange)="onchange($event)">
-        <ng-template pTemplate="selectedItem">
-          <div class="country-item country-item-value"  *ngIf="selectedCountry">
-            <div style="text-align: center; width: 200px">{{selectedCountry.name}}</div>
-          </div>
-        </ng-template>
-        <ng-template let-country pTemplate="item">
-          <div class="country-item">
-            <div>{{country.value.name}}</div>
-          </div>
-        </ng-template>
+<!--          <ng-template pTemplate="selectedItem">-->
+<!--            <div class="country-item country-item-value" *ngIf="selectedCountry">-->
+              <option style="text-align: center; width: 200px" *ngFor="let country of countries" value="optionLabel">{{selectedCountry.name}}</option>
+<!--            </div>-->
+<!--          </ng-template>-->
+<!--        <ng-template let-country pTemplate="item">-->
+<!--          <div class="country-item">-->
+<!--            <div>{{country.value.name}}</div>-->
+<!--          </div>-->
+<!--        </ng-template>-->
       </p-dropdown>
     </div>
     <br><br><br>

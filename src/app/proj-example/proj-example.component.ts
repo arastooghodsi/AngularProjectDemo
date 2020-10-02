@@ -7,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjExampleComponent implements OnInit {
 
-  users: string[] = ['arastoo', 'fatemeh', 'parastoo'];
-
+  users: any[] = [
+    { name: 'arastoo', id: 1 },
+    { name: 'fatemeh', id: 2 },
+    { name: 'parastoo', id: 3 }
+  ];
+  passenger: any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onChange(event: Event) {
+    // alert(cars.name);
+    alert((event.target as HTMLSelectElement).value);
   }
 
 }

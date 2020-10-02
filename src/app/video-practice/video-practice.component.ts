@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectItem } from 'primeng/api';
-import {every} from "rxjs/operators";
+import {every} from 'rxjs/operators';
 
 @Component({
   selector: 'app-video-practice',
@@ -20,9 +20,9 @@ export class VideoPracticeComponent implements OnInit {
   defaultJob = 'کارمند';
   inputForm: FormGroup;
 
-  dropboxInputItem: string = "ایران";
+  dropboxInputItem = 'ایران';
 
-  selectedCountry: string = 'ایران';
+  selectedCountry = 'ایران';
   countries: any[];
   items: SelectItem[];
   item: string;
@@ -46,18 +46,19 @@ export class VideoPracticeComponent implements OnInit {
     //noinspection TypeScriptValidateTypes
     this.inputForm = new FormGroup({
       // 'info': new FormControl({
-        'username': new FormControl(null, [Validators.required]),
-        'email': new FormControl(null, [Validators.required, Validators.email]),
+        username: new FormControl(null, [Validators.required]),
+        email: new FormControl(null, [Validators.required, Validators.email]),
       // }),
-      'gender': new FormControl(null),
-      'job': new FormControl(this.defaultJob)
+      gender: new FormControl(null),
+      job: new FormControl(this.defaultJob)
     });
   }
 
   onchange(event: Event) {
     // this.dropboxInputItem = this.selectedCountry.toString();
     // alert(this.dropboxInputItem);
-    this.dropboxInputItem = (event.target as HTMLSelectElement).name;
+    // this.dropboxInputItem = (event.target as HTMLInputElement).value;
+    // this.dropboxInputItem = (event.target as HTMLSelectElement).name;
     // alert((event.target as HTMLInputElement).value);
     // alert((<HTMLInputElement>event.target).value);
     alert(this.dropboxInputItem);
