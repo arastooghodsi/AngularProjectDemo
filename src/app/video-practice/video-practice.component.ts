@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectItem } from 'primeng/api';
-import {every} from 'rxjs/operators';
 
 @Component({
   selector: 'app-video-practice',
@@ -10,22 +9,18 @@ import {every} from 'rxjs/operators';
 })
 export class VideoPracticeComponent implements OnInit {
 
-
-
-    users: string[] = ['arastoo', 'fatemeh', 'parastoo'];
-    userm: string;
   genders: string[] = ['آقا', 'خانم'];
   jobs: string[] = ['کارمند', 'آزاد', 'خانه دار', 'بیکار'];
   defaultGender = 'آقا';
   defaultJob = 'کارمند';
   inputForm: FormGroup;
 
-  dropboxInputItem = 'ایران';
-
-  selectedCountry = 'ایران';
+  selectedCountry: string;
   countries: any[];
   items: SelectItem[];
   item: string;
+
+  @ViewChild('change') _change;
 
   constructor() {
     this.countries = [
@@ -46,28 +41,24 @@ export class VideoPracticeComponent implements OnInit {
     //noinspection TypeScriptValidateTypes
     this.inputForm = new FormGroup({
       // 'info': new FormControl({
-        username: new FormControl(null, [Validators.required]),
-        email: new FormControl(null, [Validators.required, Validators.email]),
+        'username': new FormControl(null, [Validators.required]),
+        'email': new FormControl(null, [Validators.required, Validators.email]),
       // }),
-      gender: new FormControl(null),
-      job: new FormControl(this.defaultJob)
+      'gender': new FormControl(this.defaultGender),
+      'job': new FormControl(this.defaultJob)
     });
   }
 
-  onchange(event: Event) {
-    // this.dropboxInputItem = this.selectedCountry.toString();
-    // alert(this.dropboxInputItem);
-    // this.dropboxInputItem = (event.target as HTMLInputElement).value;
-    // this.dropboxInputItem = (event.target as HTMLSelectElement).name;
-    // alert((event.target as HTMLInputElement).value);
-    // alert((<HTMLInputElement>event.target).value);
-    alert(this.dropboxInputItem);
+  onChange(event) {
+    alert(event.name.value);
+    // alert("dsfdfsd");
   }
+
 
   // tslint:disable-next-line:typedef
   onSubmit() {
     console.log(this.inputForm);
-    // alert(this.inputForm.value.job);
+    alert(this.inputForm.value.job);
   }
   //
   // onClick() {

@@ -63,10 +63,10 @@
                   [filter]="true"
                   [showClear]="true"
                   placeholder="کشوری را انتخاب کنید..."
-                  (onChange)="onchange($event)">
+                  (onChange)="onChange(selectedCountry)">
 <!--          <ng-template pTemplate="selectedItem">-->
 <!--            <div class="country-item country-item-value" *ngIf="selectedCountry">-->
-              <option style="text-align: center; width: 200px" *ngFor="let country of countries" value="optionLabel">{{selectedCountry.name}}</option>
+              <option style="text-align: center; width: 200px" *ngFor="let country of countries" [value]="selectedCountry">{{country.name}}</option>
 <!--            </div>-->
 <!--          </ng-template>-->
 <!--        <ng-template let-country pTemplate="item">-->
@@ -77,12 +77,6 @@
       </p-dropdown>
     </div>
     <br><br><br>
-    <p>Arastoo</p>
-
-    <div *ngFor="let user of users">
-      {{ user }}
-    </div>
-    <h1>Fatemeh</h1>
 
   </div>
 </div>

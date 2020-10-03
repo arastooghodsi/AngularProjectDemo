@@ -9,6 +9,6 @@
 <!--</select>-->
 
   <label class="sbw_light">Title:</label><br />
-  <select placeholder="کشوری را انتخاب کنید..." (change)="onChange($event)">
+  <select (change)="onChange($event)">
     <option *ngFor="let user of users" [value]="user.name">{{user.name}}</option>
   </select>
