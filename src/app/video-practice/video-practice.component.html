@@ -43,39 +43,32 @@
             {{ job }}
           </label>
         </div> <!--Job RadioButton End-->
-
         <!--    <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched">-->
         <!--      please enter valid data-->
         <!--    </span>-->
-
         <div>
           <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div class="dropboxClass">
+          <h1>دراپ باکس با جستجو</h1>
+          <p-dropdown formControlName="dropdown"
+                      [options]="countries"
+                      name="country"
+                      value="country"
+                      ngModel
+                      optionLabel="name"
+                      [filter]="true"
+                      [showClear]="true"
+                      placeholder="کشوری را انتخاب کنید..."
+                      (onChange)="onChange($event)">
+            <option style="text-align: center; width: 200px" *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+          </p-dropdown>
         </div>
 
       </form>
     </div>
 
-    <div class="dropboxClass">
-      <h1>دراپ باکس با جستجو</h1>
-      <p-dropdown [options]="countries"
-                  [(ngModel)]="selectedCountry"
-                  optionLabel="name"
-                  [filter]="true"
-                  [showClear]="true"
-                  placeholder="کشوری را انتخاب کنید..."
-                  (onChange)="onChange(selectedCountry)">
-<!--          <ng-template pTemplate="selectedItem">-->
-<!--            <div class="country-item country-item-value" *ngIf="selectedCountry">-->
-              <option style="text-align: center; width: 200px" *ngFor="let country of countries" [value]="selectedCountry">{{country.name}}</option>
-<!--            </div>-->
-<!--          </ng-template>-->
-<!--        <ng-template let-country pTemplate="item">-->
-<!--          <div class="country-item">-->
-<!--            <div>{{country.value.name}}</div>-->
-<!--          </div>-->
-<!--        </ng-template>-->
-      </p-dropdown>
-    </div>
     <br><br><br>
 
   </div>

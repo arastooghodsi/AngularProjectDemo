@@ -21,6 +21,7 @@ export class VideoPracticeComponent implements OnInit {
   item: string;
 
   @ViewChild('change') _change;
+  country: any;
 
   constructor() {
     this.countries = [
@@ -45,11 +46,13 @@ export class VideoPracticeComponent implements OnInit {
         'email': new FormControl(null, [Validators.required, Validators.email]),
       // }),
       'gender': new FormControl(this.defaultGender),
-      'job': new FormControl(this.defaultJob)
+      'job': new FormControl(this.defaultJob),
+      'country': new FormControl(null)
     });
   }
 
   onChange(event) {
+    this.selectedCountry = event.target.inputForm.value;
     alert(event.name.value);
     // alert("dsfdfsd");
   }
