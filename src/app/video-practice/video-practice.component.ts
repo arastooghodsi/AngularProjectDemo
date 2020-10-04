@@ -47,13 +47,13 @@ export class VideoPracticeComponent implements OnInit {
       // }),
       'gender': new FormControl(this.defaultGender),
       'job': new FormControl(this.defaultJob),
-      'country': new FormControl(null)
+      'country': new FormControl(null, [Validators.required])
     });
   }
 
   onChange(event) {
-    this.selectedCountry = event.target.inputForm.value;
-    alert(event.name.value);
+    this.country = (event.target as HTMLSelectElement).value;
+    // alert(event.name.value);
     // alert("dsfdfsd");
   }
 
@@ -61,7 +61,7 @@ export class VideoPracticeComponent implements OnInit {
   // tslint:disable-next-line:typedef
   onSubmit() {
     console.log(this.inputForm);
-    alert(this.inputForm.value.job);
+    alert(this.country);
   }
   //
   // onClick() {

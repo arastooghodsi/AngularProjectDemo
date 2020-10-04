@@ -23,7 +23,7 @@
           <span class="alert alert-danger"
                 *ngIf="!inputForm.get('email').valid && inputForm.get('email').touched">
           Please enter a valid email
-        </span>
+          </span>
         </div>
         <!--    </div>-->
 
@@ -46,24 +46,28 @@
         <!--    <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched">-->
         <!--      please enter valid data-->
         <!--    </span>-->
-        <div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
 
         <div class="dropboxClass">
           <h1>دراپ باکس با جستجو</h1>
-          <p-dropdown formControlName="dropdown"
+          <p-dropdown formControlName="country"
                       [options]="countries"
                       name="country"
-                      value="country"
-                      ngModel
+                      [(ngModel)]="selectedCountry"
                       optionLabel="name"
                       [filter]="true"
                       [showClear]="true"
                       placeholder="کشوری را انتخاب کنید..."
                       (onChange)="onChange($event)">
-            <option style="text-align: center; width: 200px" *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                <option style="text-align: center; width: 200px" *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                <span class="alert alert-danger"
+                      *ngIf="inputForm.get('country').touched">
+                  Please select a country!!
+                </span>
           </p-dropdown>
+        </div>
+        <br><br>
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
 
       </form>
