@@ -12,7 +12,7 @@
           <label for="username">نام کاربری: </label>
           <input formControlName="username" type="text" class="form-control" id="username">
           <span class="alert alert-danger"
-                *ngIf="!inputForm.get('username').valid && inputForm.get('username').touched">
+                *ngIf="!inputForm.get('username').valid && inputForm.get('username').touched && isSubmitted">
           Please enter a valid username
         </span>
         </div>
@@ -21,7 +21,7 @@
           <label for="email">ایمیل: </label>
           <input formControlName="email" type="text" class="form-control" id="email">
           <span class="alert alert-danger"
-                *ngIf="!inputForm.get('email').valid && inputForm.get('email').touched">
+                *ngIf="!inputForm.get('email').valid && inputForm.get('email').touched && isSubmitted">
           Please enter a valid email
           </span>
         </div>
@@ -43,9 +43,6 @@
             {{ job }}
           </label>
         </div> <!--Job RadioButton End-->
-        <!--    <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched">-->
-        <!--      please enter valid data-->
-        <!--    </span>-->
 
         <div class="dropboxClass">
           <h1>دراپ باکس با جستجو</h1>
@@ -60,14 +57,20 @@
                       (onChange)="onChange($event)">
                 <option style="text-align: center; width: 200px" *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
                 <span class="alert alert-danger"
-                      *ngIf="inputForm.get('country').touched">
+                      *ngIf="!inputForm.get('country').valid && inputForm.get('country').touched">
                   Please select a country!!
                 </span>
           </p-dropdown>
         </div>
         <br><br>
+
+
+
         <div>
           <button type="submit" class="btn btn-primary">Submit</button>
+          <span class="alert alert-danger" *ngIf="!inputForm.valid && inputForm.touched && isSubmitted">
+                please enter valid data
+          </span>
         </div>
 
       </form>

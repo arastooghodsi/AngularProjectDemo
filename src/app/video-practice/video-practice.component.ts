@@ -19,6 +19,7 @@ export class VideoPracticeComponent implements OnInit {
   countries: any[];
   items: SelectItem[];
   item: string;
+  isSubmitted: boolean = false;
 
   @ViewChild('change') _change;
   country: any;
@@ -52,7 +53,7 @@ export class VideoPracticeComponent implements OnInit {
   }
 
   onChange(event) {
-    this.country = (event.target as HTMLSelectElement).value;
+    this.country = (event.target as HTMLSelectElement);
     // alert(event.name.value);
     // alert("dsfdfsd");
   }
@@ -60,8 +61,16 @@ export class VideoPracticeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   onSubmit() {
+    this.isSubmitted = true;
     console.log(this.inputForm);
-    alert(this.country);
+    console.log(this.inputForm.value.username);
+    console.log(this.inputForm.value.email);
+    console.log(this.inputForm.value.gender);
+    console.log(this.inputForm.value.job);
+    console.log(this.inputForm.value.country.name);
+    // alert(this.inputForm.value.country.name);
+
+    this.inputForm.reset()
   }
   //
   // onClick() {
