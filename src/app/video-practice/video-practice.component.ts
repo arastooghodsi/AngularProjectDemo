@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectItem } from 'primeng/api';
 
 @Component({
@@ -23,6 +23,7 @@ export class VideoPracticeComponent implements OnInit {
 
   @ViewChild('change') _change;
   country: any;
+  controls: string[] = [];
 
   constructor() {
     this.countries = [
@@ -48,7 +49,8 @@ export class VideoPracticeComponent implements OnInit {
       // }),
       'gender': new FormControl(this.defaultGender),
       'job': new FormControl(this.defaultJob),
-      'country': new FormControl(null, [Validators.required])
+      'country': new FormControl(null, [Validators.required]),
+      'colors': new FormArray([])
     });
   }
 
@@ -70,11 +72,12 @@ export class VideoPracticeComponent implements OnInit {
     console.log(this.inputForm.value.country.name);
     // alert(this.inputForm.value.country.name);
 
-    this.inputForm.reset()
+    // this.inputForm.reset();
   }
-  //
-  // onClick() {
-  //   this.inputForm.reset();
-  // }
+
+  onAddColorsClick() {
+    const control = new FormControl(null, Validators.required);
+    (this.inputForm.get('colors') as FormArray).push(control);
+  }
 
 }
