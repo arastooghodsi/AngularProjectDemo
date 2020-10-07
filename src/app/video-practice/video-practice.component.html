@@ -67,7 +67,8 @@
         <div formArrayName="colors">
           <h4>Enter your colors</h4>
           <button class="btn btn-primary" type="button" (click)="onAddColorsClick()">Add colors</button>
-          <div class="form-group" *ngFor="let colorControl of inputForm.value.get('colors').controls; let i = index">
+          <div class="form-group" *ngFor="let colorControl of inputForm.get('colors'); let i = index">
+            <!--<div class="form-group" *ngFor="let colorControl of inputForm.value.colors; let i = index">-->
             <input type="text" class="form-control" [formControlName]="i">
           </div>
         </div>

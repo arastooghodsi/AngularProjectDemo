@@ -20,7 +20,9 @@ export class VideoPracticeComponent implements OnInit {
   isSubmitted = false;
 
   country: any;
-  controls: any[] = [];
+  // controls(): FormArray {
+  //   return this.inputForm.controls as FormArray;
+  // }
 
   constructor() {
     this.countries = [
@@ -73,8 +75,9 @@ export class VideoPracticeComponent implements OnInit {
   }
 
   onAddColorsClick() {
-    const control = new FormControl(null, Validators.required);
-    (this.inputForm.get('colors') as FormArray).push(control);
+    const control = new FormControl(null);
+    (this.inputForm.value.get('colors') as FormArray).push(control);
+    // this.controls().push(control1);
   }
 
 }
