@@ -17,13 +17,10 @@ export class VideoPracticeComponent implements OnInit {
 
   selectedCountry: string;
   countries: any[];
-  items: SelectItem[];
-  item: string;
-  isSubmitted: boolean = false;
+  isSubmitted = false;
 
-  @ViewChild('change') _change;
   country: any;
-  controls: string[] = [];
+  controls: any[] = [];
 
   constructor() {
     this.countries = [
@@ -44,13 +41,13 @@ export class VideoPracticeComponent implements OnInit {
     //noinspection TypeScriptValidateTypes
     this.inputForm = new FormGroup({
       // 'info': new FormControl({
-        'username': new FormControl(null, [Validators.required]),
-        'email': new FormControl(null, [Validators.required, Validators.email]),
+        username: new FormControl(null, [Validators.required]),
+        email: new FormControl(null, [Validators.required, Validators.email]),
       // }),
-      'gender': new FormControl(this.defaultGender),
-      'job': new FormControl(this.defaultJob),
-      'country': new FormControl(null, [Validators.required]),
-      'colors': new FormArray([])
+      gender: new FormControl(this.defaultGender),
+      job: new FormControl(this.defaultJob),
+      country: new FormControl(null, [Validators.required]),
+      colors: new FormArray([])
     });
   }
 
@@ -72,16 +69,12 @@ export class VideoPracticeComponent implements OnInit {
     console.log(this.inputForm.value.country.name);
     // alert(this.inputForm.value.country.name);
 
-<<<<<<< HEAD
-    this.inputForm.reset();
-=======
     // this.inputForm.reset();
   }
 
   onAddColorsClick() {
     const control = new FormControl(null, Validators.required);
     (this.inputForm.get('colors') as FormArray).push(control);
->>>>>>> 12d9ff19d487212ba03791f6955c673e5cc18032
   }
 
 }
