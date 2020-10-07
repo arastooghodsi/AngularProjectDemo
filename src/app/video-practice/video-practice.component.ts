@@ -70,11 +70,7 @@ export class VideoPracticeComponent implements OnInit {
     console.log(this.inputForm.value.country.name);
     // alert(this.inputForm.value.country.name);
 
-    this.inputForm.reset()
+    this.inputForm.reset();
   }
-  //
-  // onClick() {
-  //   this.inputForm.reset();
-  // }
 
 }
