@@ -72,12 +72,17 @@ export class VideoPracticeComponent implements OnInit {
     // alert(this.inputForm.value.country.name);
 
     // this.inputForm.reset();
+    console.warn(this.inputForm.value);
   }
 
   onAddColorsClick() {
     const control = new FormControl(null);
-    (this.inputForm.value.get('colors') as FormArray).push(control);
+    this.myColors.push(control);
     // this.controls().push(control1);
+  }
+
+  get myColors() {
+    return this.inputForm.get('colors') as FormArray;
   }
 
 }
