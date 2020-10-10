@@ -20,9 +20,6 @@ export class VideoPracticeComponent implements OnInit {
   isSubmitted = false;
 
   country: any;
-  // controls(): FormArray {
-  //   return this.inputForm.controls as FormArray;
-  // }
 
   constructor() {
     this.countries = [
@@ -50,6 +47,7 @@ export class VideoPracticeComponent implements OnInit {
       job: new FormControl(this.defaultJob),
       country: new FormControl(null, [Validators.required]),
       colors: new FormArray([])
+      // withdraw: new FormArray([])
     });
   }
 
@@ -73,6 +71,7 @@ export class VideoPracticeComponent implements OnInit {
 
     // this.inputForm.reset();
     console.warn(this.inputForm.value);
+    // console.log(this.inputForm.value.withdraw);
   }
 
   onAddColorsClick() {
@@ -81,8 +80,17 @@ export class VideoPracticeComponent implements OnInit {
     // this.controls().push(control1);
   }
 
+  // onAddWhithdrawClick() {
+  //   const withdrawControl = new FormControl(null);
+  //   this.myWithdraw.push(withdrawControl);
+  // }
+
   get myColors() {
     return this.inputForm.get('colors') as FormArray;
   }
+
+  // get myWithdraw() {
+  //   return this.inputForm.get('withdraw') as FormArray;
+  // }
 
 }
