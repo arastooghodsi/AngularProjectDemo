@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-proj-example',
@@ -7,20 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjExampleComponent implements OnInit {
 
-  users: any[] = [
-    { name: 'arastoo', id: 1 },
-    { name: 'fatemeh', id: 2 },
-    { name: 'parastoo', id: 3 }
-  ];
-  passenger: any;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  onChange(event: Event) {
-    // alert(cars.name);
-    alert((event.target as HTMLSelectElement).value);
-  }
 
 }
