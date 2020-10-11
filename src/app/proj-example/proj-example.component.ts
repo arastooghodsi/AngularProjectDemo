@@ -7,11 +7,7 @@ import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@ang
   styleUrls: ['./proj-example.component.sass']
 })
 export class ProjExampleComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
+  ngOnInit():void {
   }
 
 
