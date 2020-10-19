@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-proj-example',
