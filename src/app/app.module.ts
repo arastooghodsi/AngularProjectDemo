@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { AddAccountComponent } from './add-account/add-account.component';
+import {LoggingService} from "./loggingService";
+import {AccountsService} from "./accounts.service";
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { AddAccountComponent } from './add-account/add-account.component';
     FormsModule,
     DropdownModule
   ],
-  providers: [],
+  providers: [LoggingService, AccountsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
