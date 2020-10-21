@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-proj-example',
@@ -7,8 +6,15 @@ import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@ang
   styleUrls: ['./proj-example.component.sass']
 })
 export class ProjExampleComponent implements OnInit {
-  ngOnInit():void {
+
+  constructor() {
   }
+
+  ngOnInit(): void {
+    const massage = 'Hello World';
+    console.log(massage);
+  }
+
 
 
 }
