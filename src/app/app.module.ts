@@ -10,13 +10,17 @@ import { ProjExampleComponent } from './proj-example/proj-example.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { AddAccountComponent } from './add-account/add-account.component';
+import {LoggingService} from "./loggingService";
+import {AccountsService} from "./accounts.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoPracticeComponent,
-    ProjExampleComponent
+    ProjExampleComponent,
+    AddAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,7 @@ import { DropdownModule } from 'primeng/dropdown';
     FormsModule,
     DropdownModule
   ],
-  providers: [],
+  providers: [LoggingService, AccountsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

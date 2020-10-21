@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import {Component, OnInit} from '@angular/core';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> eeeca0cea58a551bd90218f603a31a16b18eeddc
 
 @Component({
   selector: 'app-proj-example',
