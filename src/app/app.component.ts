@@ -27,4 +27,8 @@ export class AppComponent implements OnInit, DoCheck {
     console.log(this.accountsService.account);
   }
 
+  public onStarClicked(rating: number) {
+    console.log('The rating ${rating} is clicked')
+  }
+
 }
