@@ -10,12 +10,6 @@ import { ProjExampleComponent } from './proj-example/proj-example.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
-import { AddAccountComponent } from './add-account/add-account.component';
-import {LoggingService} from "./loggingService";
-import {AccountsService} from "./accounts.service";
-import { AddUserComponent } from './add-user/add-user.component';
-import { ShowUserTableComponent } from './show-user-table/show-user-table.component';
-import { TempComponent } from './temp/temp.component';
 
 
 @NgModule({
@@ -23,10 +17,6 @@ import { TempComponent } from './temp/temp.component';
     AppComponent,
     VideoPracticeComponent,
     ProjExampleComponent,
-    AddAccountComponent,
-    AddUserComponent,
-    ShowUserTableComponent,
-    TempComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +26,7 @@ import { TempComponent } from './temp/temp.component';
     FormsModule,
     DropdownModule
   ],
-  providers: [LoggingService, AccountsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
