@@ -10,6 +10,9 @@ import { ProjExampleComponent } from './proj-example/proj-example.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { FirstPageComponent } from './Havadar/first-page/first-page.component';
+import { LoginPageComponent } from './Havadar/login-page/login-page.component';
+import { EditProfilePageComponent } from './Havadar/edit-profile-page/edit-profile-page.component';
 
 
 @NgModule({
@@ -17,6 +20,9 @@ import { DropdownModule } from 'primeng/dropdown';
     AppComponent,
     VideoPracticeComponent,
     ProjExampleComponent,
+    FirstPageComponent,
+    LoginPageComponent,
+    EditProfilePageComponent,
   ],
   imports: [
     BrowserModule,
