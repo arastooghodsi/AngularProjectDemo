@@ -4,11 +4,13 @@
     <!--{{a.name + "&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;" + a.password}}-->
   <!--</li>-->
 <!--</ul>-->
+<!--<app-proj-example [rating]=3 (starClicked)="onStarClicked($event)"></app-proj-example>-->
+<!--<app-proj-example [rating]=4.5></app-proj-example>-->
+<!--<app-proj-example [rating]=5></app-proj-example>-->
+<!--<app-proj-example [rating]=1.5></app-proj-example>-->
 <!--<app-proj-example></app-proj-example>-->
-<!--<app-proj-example *ngFor="let rating of ratings" [rating]=rating></app-proj-example>-->
-<app-proj-example [rating]=3 (starClicked)="onStarClicked($event)"></app-proj-example>
-<app-proj-example [rating]=4.5></app-proj-example>
-<app-proj-example [rating]=5></app-proj-example>
-<app-proj-example [rating]=1.5></app-proj-example>
-<app-proj-example></app-proj-example>
-<!--<router-outlet></router-outlet>-->
+
+<!--<app-add-user (onAddUserClicked)="userAdded($event)"></app-add-user>-->
+<!--<app-show-user-table [users]="users"></app-show-user-table>-->
+
+<router-outlet></router-outlet>

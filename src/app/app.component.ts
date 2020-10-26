@@ -2,6 +2,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 import { LoggingService } from './loggingService';
 import { IAccount } from './account.interface';
 import { AccountsService } from './accounts.service';
+import {user} from './add-user.interface';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit, DoCheck {
 
   accounts: IAccount[] = [];
   message = "HelloWorld";
+  users: user[] = [];
 
   constructor(private loggingService: LoggingService,
               private accountsService: AccountsService) {}
@@ -29,6 +31,10 @@ export class AppComponent implements OnInit, DoCheck {
 
   public onStarClicked(rating: number) {
     console.log('The rating ${rating} is clicked')
+  }
+
+  userAdded(users: user[]) {
+    this.users = users;
   }
 
 }
