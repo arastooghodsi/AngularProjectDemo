@@ -13,6 +13,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FirstPageComponent } from './Havadar/first-page/first-page.component';
 import { LoginPageComponent } from './Havadar/login-page/login-page.component';
 import { EditProfilePageComponent } from './Havadar/edit-profile-page/edit-profile-page.component';
+import { ShowTableComponent } from './show-table/show-table.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { EditProfilePageComponent } from './Havadar/edit-profile-page/edit-profi
     FirstPageComponent,
     LoginPageComponent,
     EditProfilePageComponent,
+    ShowTableComponent,
   ],
   imports: [
     BrowserModule,
