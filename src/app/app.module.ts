@@ -14,7 +14,9 @@ import { FirstPageComponent } from './Havadar/first-page/first-page.component';
 import { LoginPageComponent } from './Havadar/login-page/login-page.component';
 import { EditProfilePageComponent } from './Havadar/edit-profile-page/edit-profile-page.component';
 import { ShowTableComponent } from './show-table/show-table.component';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderComponent } from './header/header.component';
+import {  MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { ShowTableComponent } from './show-table/show-table.component';
     LoginPageComponent,
     EditProfilePageComponent,
     ShowTableComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { ShowTableComponent } from './show-table/show-table.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
