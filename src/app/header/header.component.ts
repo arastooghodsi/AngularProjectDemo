@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
+  colorToggle: any;
+  backgroundColorToggle: any;
 
   constructor() { }
 

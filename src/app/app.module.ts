@@ -16,7 +16,8 @@ import { EditProfilePageComponent } from './Havadar/edit-profile-page/edit-profi
 import { ShowTableComponent } from './show-table/show-table.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './header/header.component';
-import {  MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {  MatIconModule } from '@angular/material/icon';
     FormsModule,
     DropdownModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

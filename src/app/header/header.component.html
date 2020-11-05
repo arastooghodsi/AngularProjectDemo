@@ -1,14 +1,12 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Custom Toolbar</span>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span>Second Line</span>
+    <span>Third Line</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
   </mat-toolbar-row>
-
+</mat-toolbar>
+<mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Third Line</span>
     <span class="example-spacer"></span>
@@ -18,19 +16,16 @@
 </mat-toolbar>
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Custom Toolbar</span>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span>Second Line</span>
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
     <span>Third Line</span>
     <span class="example-spacer"></span>
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
+<mat-tab-group mat-align-tabs="start" [color]="colorToggle" [backgroundColor]="backgroundColorToggle">
+  <mat-tab label="صفحه اصلی">صفحه اصلی</mat-tab>
+  <mat-tab label="تیم مجازی">تیم مجازی</mat-tab>
+  <mat-tab label="تیم واقعی">تیم واقعی</mat-tab>
+  <mat-tab label="اخبار">اخبار جدید</mat-tab>
+  <mat-tab label="فروشگاه">فروشگاه</mat-tab>
+</mat-tab-group>
