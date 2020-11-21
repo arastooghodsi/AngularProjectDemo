@@ -1,18 +1,22 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-      <mat-tab-group mat-align-tabs="start" [color]="colorToggle" [backgroundColor]="backgroundColorToggle">
-        <mat-tab label="صفحه اصلی">
-          <app-first-page></app-first-page>
-        </mat-tab>
-        <mat-tab label="تیم مجازی">
-          <app-edit-profile-page></app-edit-profile-page>
-        </mat-tab>
-      </mat-tab-group>
-<!--    <span class="example-spacer"></span>-->
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
-  </mat-toolbar-row>
-</mat-toolbar>
+<nav class="navbar navbar-light" style="background-color: mediumorchid">
+  <a class="navbar-brand">هوادار</a>
+<!--  <div class="container-fluid">-->
+<!--    <div class="d-flex justify-content-end">-->
+<!--      <div style="padding-left: 1rem; color: white; font-weight: 600">صفحه اصلی</div>-->
+<!--      <div style="padding-left: 1rem; color: white; font-weight: 600">تیم مجازی</div>-->
+<!--      <div style="padding-left: 1rem; color: white; font-weight: 600">ارتباط با ما</div>-->
+<!--      <div style="padding-left: 1rem; color: white; font-weight: 600">فروشگاه</div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div>
+    <app-topbar-header></app-topbar-header>
+  </div>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="جستجو" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+            style="border-color: #FFE484; border: 2px solid; color: #FFE484; font-weight: 600">جستجو</button>
+  </form>
+</nav>
 
 
 

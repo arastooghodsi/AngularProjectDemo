@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule} from '@angular/material/tabs';
+import { TopbarHeaderComponent } from './header/topbar-header/topbar-header.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatTabsModule} from '@angular/material/tabs';
     EditProfilePageComponent,
     ShowTableComponent,
     HeaderComponent,
+    TopbarHeaderComponent,
   ],
   imports: [
     BrowserModule,
