@@ -1,0 +1,10 @@
+.container-fluid a {
+  padding-left: 4rem;
+  color: white;
+  font-weight: 600
+}
+
+.container-fluid a:hover {
+  color: black;
+  text-decoration-line: none;
+}
