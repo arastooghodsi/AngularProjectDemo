@@ -10,7 +10,7 @@ export class ShowTableComponent implements OnInit {
 
   users: User[] = [
     {
-      username: 'arastoo',
+      username: 'arastooarastooarast',
       score: 1241
     },
     {
