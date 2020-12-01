@@ -23,6 +23,8 @@ import { TopbarHeaderComponent } from './header/topbar-header/topbar-header.comp
 import { MainPageComponent } from './main-page/main-page.component';
 import { VirtualTeamComponent } from './virtual-team/virtual-team.component';
 
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,

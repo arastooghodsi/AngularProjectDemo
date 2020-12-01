@@ -9,9 +9,13 @@ export class HeaderComponent implements OnInit {
   colorToggle: any;
   backgroundColorToggle: any;
 
+  items = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addItem(newItem: string) {
+    this.items = newItem;
+  }
 }

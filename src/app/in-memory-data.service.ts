@@ -5,10 +5,10 @@ import { User } from './user-interface';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataService {
+export class InMemoryDataService implements InMemoryDbService {
 
   // tslint:disable-next-line:typedef
-  createDB() {
+  createDb() {
     const users = [
       {
         id: 1,
