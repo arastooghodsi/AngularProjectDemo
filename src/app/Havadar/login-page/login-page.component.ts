@@ -13,8 +13,10 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addNewItem(value: string) {
-    this.item.emit(value);
+  // tslint:disable-next-line:typedef
+  addNewItem() {
+    // @ts-ignore
+    this.item.emit(this.newItem);
   }
 
 }
