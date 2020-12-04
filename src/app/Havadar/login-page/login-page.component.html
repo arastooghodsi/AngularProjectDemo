@@ -1,2 +1,26 @@
-<input #newItem>
-<button (click)="addNewItem()">Add</button>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container-fluid">
+  <form>
+    <i class='far fa-futbol' style='font-size:48px;color:red'></i>
+    <label style="font-family: 'B Nazanin'; font-size: 1.5rem ">ثبت نام در سایت هوادار</label>
+    <div class="form-group">
+      <label for="exampleInputEmail1">ایمیل</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ایمیل">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">پسورد</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="پسورد">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">تائید پسورد</label>
+      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="تائید پسورد">
+    </div>    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">...  من روبات نیستم!</label>
+    </div>
+    <button type="submit" class="btn btn-primary">ثبت نام</button>
+  </form>
+</div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login-page',
@@ -7,16 +7,9 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  @Output() item = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  // tslint:disable-next-line:typedef
-  addNewItem() {
-    // @ts-ignore
-    this.item.emit(this.newItem);
   }
 
 }
