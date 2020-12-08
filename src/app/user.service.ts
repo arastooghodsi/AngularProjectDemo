@@ -33,4 +33,13 @@ export class UserService {
     );
   }
 
+  searchUsers(phone: number, passTerm: string): Observable<User[]> {
+    if (!phone.toString().trim()) {
+      return of([]);
+    }
+
+    return this.http.get<User[]>(`${this.usersUrl}/?phoneNumber=${phone}`).pipe(catchError(this.handleError<User[]>('searchUsers', [])));
+
+  }
+
 }

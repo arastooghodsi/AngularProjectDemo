@@ -12,48 +12,64 @@ export class InMemoryDataService implements InMemoryDbService {
     const users = [
       {
         id: 1,
-        username: 'arastooarastooarast',
+        username: 'arastoo',
+        phoneNumber: '9188198549',
+        pass: '123',
         score: 1241
       },
       {
         id: 2,
-        username: 'fatemeh',
+        username: 'mahdi',
+        phoneNumber: '9389920976',
+        pass: '123',
         score: 1582
       },
       {
         id: 3,
         username: 'fatemeh',
-        score: 1582
+        phoneNumber: '9375383343',
+        pass: '123',
+        score: 1658
       }
       ,
       {
         id: 4,
-        username: 'fatemeh',
-        score: 1582
+        username: 'jonedelam',
+        phoneNumber: '9215943905',
+        pass: '123',
+        score: 1748
       }
       ,
       {
         id: 5,
-        username: 'fatemeh',
-        score: 1582
+        username: 'parastoo',
+        phoneNumber: '9190228831',
+        pass: '123',
+        score: 1562
       }
       ,
       {
         id: 6,
-        username: 'fatemeh',
-        score: 1582
+        username: 'mahdi',
+        phoneNumber: '9151028938',
+        pass: '123',
+        score: 1634
       }
       ,
       {
         id: 7,
-        username: 'fatemeh',
-        score: 1582
+        username: 'bahman',
+        phoneNumber: '9196550540',
+        pass: '123',
+        score: 1439
       }
       ,
       {
         id: 8,
-        username: 'fatemeh',
-        score: 1582
+        username: 'masome',
+        phoneNumber: '9196550370',
+        pass: '123',
+        score: 1147
       }
     ];
     return {users};
