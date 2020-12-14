@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
 import { User } from './user-interface';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError} from 'rxjs/operators';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/debounce';
+// import 'rxjs/add/operator/distinctUntilChanged';
+// import 'rxjs/add/operator/switchMap';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +17,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError<T>(operation = 'operation', result?: T) {
+  // tslint:disable-next-line:typedef
+  private handleError<T>(result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
@@ -22,24 +27,16 @@ export class UserService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl).pipe(
-      catchError(this.handleError<User[]>('getUsers', []))
+      catchError(this.handleError<User[]>([]))
     );
   }
 
-  getUser(id: number): Observable<User> {
-    const url = `${this.usersUrl}/${id}`;
+  getUser(phoneNumber: string): Observable<User> {
+    const url = `${this.usersUrl}/${(phoneNumber)}`;
     return this.http.get<User>(url).pipe(
-      catchError(this.handleError<User>(`getUser id=${id}`))
+      catchError(this.handleError<User>())
     );
   }
 
-  searchUsers(phone: number, passTerm: string): Observable<User[]> {
-    if (!phone.toString().trim()) {
-      return of([]);
-    }
-
-    return this.http.get<User[]>(`${this.usersUrl}/?phoneNumber=${phone}`).pipe(catchError(this.handleError<User[]>('searchUsers', [])));
-
-  }
 
 }

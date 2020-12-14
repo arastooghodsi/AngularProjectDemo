@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Observable, Subject} from 'rxjs';
 import {User} from '../../user-interface';
 import {UserService} from '../../user.service';
-import {debounce, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import {debounce, debounceTime, distinctUntilChanged, switchMap, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-page',
@@ -12,49 +12,40 @@ import {debounce, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/oper
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
-
   inputForm: FormGroup;
+
   robatCheck = false;
   formValid = false;
-  users$: Observable<User[]>;
-  phoneTerm;
-  private searchPhone = new Subject<string>();
+  users$: Observable<User>;
+  // tslint:disable-next-line:ban-types
+  phoneTerm: string;
+  searchTerm$ = new Observable<User>();
+  user: User;
 
-  search;
 
-  // search(phoneTerm: number): void {
-  //   this.searchPhone.next(phoneTerm);
-  // }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.inputForm = new FormGroup({
       phoneNumber: new FormControl(null, [Validators.required, Validators.minLength(10)]),
       pass: new FormControl(null, Validators.required),
-      check: new FormControl(null, Validators.required)
+      // check: new FormControl(null, Validators.required)
     });
   }
 
   onSubmit() {
-    console.log(this.inputForm);
+    console.log(this.inputForm + '+++');
     this.phoneTerm = this.inputForm.get('phoneNumber').value;
-    console.log(this.phoneTerm);
-    this.searchPhone.next(this.phoneTerm);
-    console.log(this.phoneTerm);
-    console.log(this.searchPhone);
-    this.searchUser();
+    console.log(this.phoneTerm + '***');
+    console.log(this.phoneTerm + '...');
+    this.getUser(this.inputForm.get('phoneNumber').value);
   }
 
-  searchUser(): void {
-    this.users$ = this.searchPhone.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((phoneTerm: string) => this.userService.searchUsers(this.phoneTerm, '123')),
-    );
-    // if (this.users$) {
-    //   alert('Yes');
-    // }
-    console.log(this.users$);
+  getUser(phone: string) {
+    this.userService.getUser(phone).subscribe(users$ => this.users$);
+    console.log('arastoo');
+    this.user = (this.users$ as unknown) as User;
+    console.log(this.user.username);
   }
 
 }
