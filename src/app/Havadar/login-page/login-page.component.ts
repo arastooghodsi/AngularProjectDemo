@@ -42,10 +42,13 @@ export class LoginPageComponent implements OnInit {
   }
 
   getUser(phone: string) {
-    this.userService.getUser(phone).subscribe(users$ => this.users$);
-    console.log('arastoo');
-    this.user = (this.users$ as unknown) as User;
-    console.log(this.user.username);
+    this.userService.getUser(phone).subscribe(
+      // tslint:disable-next-line:no-unused-expression
+      (user: User) => {
+        this.users$;
+      }
+    );
+    console.log((this.user as User).score);
   }
 
 }

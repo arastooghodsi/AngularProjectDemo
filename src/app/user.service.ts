@@ -13,12 +13,12 @@ import { catchError} from 'rxjs/operators';
 })
 export class UserService {
 
-  private usersUrl = 'api/users';
+  private usersUrl = 'api/login';
 
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
-  private handleError<T>(result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
@@ -27,14 +27,14 @@ export class UserService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl).pipe(
-      catchError(this.handleError<User[]>([]))
+      catchError(this.handleError<User[]>('getUsers', []))
     );
   }
 
-  getUser(phoneNumber: string): Observable<User> {
-    const url = `${this.usersUrl}/${(phoneNumber)}`;
+  getUser(id: string): Observable<User> {
+    const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url).pipe(
-      catchError(this.handleError<User>())
+      catchError(this.handleError<User>(`getUser id=${id}`))
     );
   }
 
